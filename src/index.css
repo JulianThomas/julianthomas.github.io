@@ -1,0 +1,158 @@
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: rgb(34, 40, 49);
+  color: rgb(238, 238, 238);
+  min-width: 350px;
+  margin: 0;
+  padding: auto;
+}
+.footer {
+  background-color: rgba(30, 36, 45, 0.8);
+}
+
+.header {
+  grid-template-columns: 0.2fr auto minmax(420px, 2fr) 0.2fr;
+
+  display: flex;
+  top: 0;
+  position: sticky;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(30, 36, 45, 0.8);
+}
+
+.navbar-list {
+  list-style-type: none;
+}
+.navbar-item {
+  margin-bottom: 1em;
+}
+.navbar-item a {
+  color: rgb(0, 173, 181);
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  border-radius: 0.5em;
+}
+.navbar-item a:hover,
+.navbar-item a:focus {
+  color: rgba(0, 173, 181, 0.8);
+  background: rgb(40, 46, 54);
+  /* background: #3d3c3c; */
+}
+.navbar-item .current {
+  color: rgba(0, 173, 181, 0.8);
+}
+
+*/ main {
+  padding: 1em;
+}
+
+/*big screen style*/
+/* @media screen and (min-width: 650px) { */
+.nav-toggle-label {
+  display: none;
+}
+
+.navbar {
+  all: unset;
+  grid-column: 3 / span 1;
+  /* display: flex; */
+  /* justify-content: space-around; */
+  /* align-items: flex-end; */
+}
+.navbar-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.navbar-item {
+  margin-bottom: 0;
+}
+.navbar-item .nav-link,
+.navbar-item .current {
+  opacity: 1;
+  position: relative;
+}
+.navbar-item .nav-link:before {
+  content: " ";
+  display: block;
+  height: 3px;
+  /* background: rgb(56, 151, 206); */
+  background: rgba(0, 173, 181, 0.8);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.5em;
+  transform: scale(0, 1);
+  transition: transform ease-in-out 250ms;
+}
+.navbar-item a.nav-link:hover::before,
+.navbar-item a.nav-link:focus::before {
+  transform: scale(1, 1);
+}
+.navbar-item .current::before {
+  content: " ";
+  display: block;
+  height: 3px;
+  background: rgba(0, 173, 181, 0.8);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.5em;
+  transform: scale(1, 1);
+}
+
+img.logo {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  padding: 0.5rem;
+}
+
+.sub-heading,
+.column-heading,
+.columns {
+  justify-items: center;
+  /* align-items: center; */
+  text-align: center;
+}
+.hero {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.canvas {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+}
+.heading {
+  position: relative;
+  /* align-self: center; */
+  justify-self: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: auto;
+
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+}
+
+/* todo adjust colors based on scheme */
+@media (prefers-color-scheme: light) {
+}
