@@ -208,7 +208,7 @@ window.onresize = function () {
 const homeSection = document.querySelectorAll(".page-section");
 const sectionOptions = {
   rootMargin: "-40px 0px 0px 0px",
-  threshold: 0.5,
+  threshold: 0.2,
 };
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
