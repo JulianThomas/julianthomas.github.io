@@ -8,6 +8,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="/src/index.css" />
     <title>Julian Thomas</title>
   </head>
@@ -15,17 +18,24 @@
   <body>
     <div class="home hero page-section" id="home">
       <canvas class="canvas">
-
       </canvas>
-      <div class="heading">
+      <div class="hero-heading">
         
-          <div class="block is-size-4" >
-            Hello! My name is Julian. 
+          <div class="block is-size-4 hero-title" >
+            Hello! My name is <span class="name">Julian.</span>
           </div>
-          <div class="block">I design and build user interfaces. </div>
-          <div class="block">And the logic behind them. </div>
-      </div>
+          <div class="hero-text text-1">I design and build user interfaces. </div>
+          <div class=" hero-text text-2">And the logic behind them. </div>
+          <div class="more">
+            <a class="btn" onclick=Scroll()> 
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
     </div>
+    <main class="container">
     <div class="header">
       <nav class="navbar">
         <ul class="navbar-list">
@@ -43,7 +53,6 @@
       </nav>
     </div>
 
-    <main class="container">
       <section id="about" class="section page-section about">
         <div class="block">
           Hey! I'm Julian Don Bosco Thomas. I've been close to a computer since
@@ -165,48 +174,48 @@
               <div class="column-heading is-size-5 block">System and Deployment</div>
               <div class="columns">
                 <div class="column">
-                <img
-                  class="logo"
-                  src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg"
-                  alt="heroku"
-                  title="heroku"
-                />
-                <img
-                  class="logo"
-                  title="Docker"
-                  src="https://www.vectorlogo.zone/logos/docker/docker-official.svg"
-                  alt="Docker"
-                />
-                <img
+                  <img
+                    class="logo"
+                    src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg"
+                    alt="heroku"
+                    title="heroku"
+                  />
+                  <img
+                    class="logo"
+                    title="Docker"
+                    src="https://www.vectorlogo.zone/logos/docker/docker-official.svg"
+                    alt="Docker"
+                  />  
+                  <img
                   class="logo"
                   title="Git"
                   src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
                   alt="Git"
-                />
+                  />
                 </div>
+                
               </div>
-              <!-- <div class="column"></div> -->
+              <div class="space is-hidden-desktop-only is-hidden-touch"></div>
             <div class="block">Heroku is what I usually use to host personal projects that needs to live on the internet. Docker just makes things super easy and worry-free. I'm currently looking into Oracle Cloud as an alternative for my personal projects</div>
           </div>
         </div>
       </section>
 <br> <br>
-
+ <div class="space"></div>
       <section id="contact" class="section contact page-section">
         <div class="container">
           <div class="block">
 
-            <div class="sub-heading">
-              <div class="block">Hello 👋 thanks for stopping by.</div>
+            <div class="sub-heading block">
+              <div class="block">👋 Thanks for stopping by.</div>
               <div class="block">
                 <div>
-
                   If you have a question or just wanna say hi, send me a message. 
                   </div><div>
                   I'd love to hear from you.
                 </div>
                 </div>
-              <a class="button block" href="mailto:5982589+JulianThomas@users.noreply.github.com">Contact me</a>
+              <a class="button block" href="julian.thomas@outlook.com">Contact me</a>
               <div class="block">
                 
                 <div class="tag has-background-grey-dark">
