@@ -240,12 +240,12 @@ img.logo {
 }
 .hero-text.text-2 {
   transform: translateY(1rem);
-  animation: fadeInUp 1s ease-out 3.5s forwards;
+  animation: fadeInUp 1s ease-out 3s forwards;
 }
 
 .more {
   opacity: 0;
-  animation: fadein 1s ease-in 5s forwards;
+  animation: fadein 1.5s ease-in 4s forwards;
 }
 
 /* todo adjust colors based on scheme */
@@ -286,7 +286,7 @@ img.logo {
     background: transparent;
   }
   60%,
-  90% {
-    background: rgb(238, 238, 238);
+  100% {
+    background: var(--text-color);
   }
 }
