@@ -27,7 +27,7 @@
           <div class="hero-text text-1">I design and build user interfaces. </div>
           <div class=" hero-text text-2">And the logic behind them. </div>
           <div class="more">
-            <a class="btn" onclick=Scroll()> 
+            <a class="btn" onclick="Scroll('down')"> 
               <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
               </svg>
@@ -40,14 +40,14 @@
       <nav class="navbar">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <a href="#home"   class="current" id="homeItem">Home</a>
+            <a class="current" id="homeItem" onclick=Scroll(this)>Home</a>
           </li>
           <li class="navbar-item">
-            <a href="#about"   class="nav-link" id="aboutItem">About</a>
+            <a class="nav-link" id="aboutItem" onclick=Scroll(this)>About</a>
           </li>
           
           <li class="navbar-item">
-            <a href="#contact"   class="nav-link" id="contactItem">Contact</a>
+            <a class="nav-link" id="contactItem" onclick=Scroll(this)>Contact</a>
           </li>
         </ul>
       </nav>

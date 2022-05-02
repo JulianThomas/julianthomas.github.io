@@ -223,8 +223,8 @@ function setActive(e) {
   const id = e.target.id;
   const currentlyActive = document.querySelector("nav li a.current");
   //   console.log(currentlyActive);
-  const shouldBeActive = document.querySelector("a[href='#" + id + "']");
-  console.log(shouldBeActive);
+  const shouldBeActive = document.querySelector("#" + id + "Item");
+  // console.log(shouldBeActive);
 
   if (currentlyActive) {
     currentlyActive.className = "nav-link";
@@ -234,6 +234,10 @@ function setActive(e) {
   }
 }
 
-function Scroll() {
-  window.scrollBy(0, window.innerHeight);
+function Scroll(e) {
+  if (e == "down") {
+    window.scroll(0, window.innerHeight);
+    return;
+  }
+  document.querySelector("." + e.innerText.toLowerCase()).scrollIntoView();
 }
