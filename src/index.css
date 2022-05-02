@@ -187,6 +187,8 @@ img.logo {
 .hero-title {
   text-align: center;
   position: relative;
+  flex-shrink: 1;
+  flex-wrap: nowrap;
   font-family: "Syne Mono", monospace;
   /* opacity: 0; */
 }
