@@ -1,15 +1,24 @@
+:root {
+  --bgcolor: rgb(34, 40, 49);
+  --text-color: rgb(238, 238, 238);
+  --text-opacity: rgba(238, 238, 238, 0.8);
+  --bghighlight: rgba(30, 36, 45, 0.8);
+  --bghover: rgba(40, 46, 52, 0.5);
+  --primarycolor: rgb(0, 173, 181);
+  --primaryhighlight: rgba(0, 173, 181, 0.8);
+}
 html {
   scroll-behavior: smooth;
-  background-color: rgb(34, 40, 49);
+  background-color: var(--bgcolor);
 }
 body {
-  color: rgb(238, 238, 238);
+  color: var(--text-color);
   min-width: 350px;
   margin: 0;
   padding: auto;
 }
 .footer {
-  background-color: rgba(30, 36, 45, 0.8);
+  background-color: var(--bghighlight);
 }
 
 .header {
@@ -20,7 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 10;
-  background-color: rgba(30, 36, 45, 0.8);
+  background-color: var(--bghighlight);
 }
 
 .navbar-list {
@@ -30,7 +39,7 @@ body {
   margin-bottom: 1rem;
 }
 .navbar-item a {
-  color: rgb(0, 173, 181);
+  color: var(--primarycolor);
   padding: 0.2rem 0.5rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -40,12 +49,12 @@ body {
 }
 .navbar-item a:hover,
 .navbar-item a:focus {
-  color: rgba(0, 173, 181, 0.8);
-  background: rgb(40, 46, 54);
+  color: var(--primaryhighlight);
+  background: var(--bghover);
   /* background: #3d3c3c; */
 }
 .navbar-item .current {
-  color: rgba(0, 173, 181, 0.8);
+  color: var(--primaryhighlight);
 }
 
 .space {
@@ -89,7 +98,7 @@ main {
   display: block;
   height: 3px;
   /* background: rgb(56, 151, 206); */
-  background: rgba(0, 173, 181, 0.8);
+  background: var(--primaryhighlight);
   position: absolute;
   left: 0;
   right: 0;
@@ -140,7 +149,7 @@ img.logo {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
+  width: max-content;
   height: auto;
   /* background-color: rgba(30, 36, 45, 0.1); */
 
@@ -157,12 +166,12 @@ img.logo {
   z-index: 2;
 }
 .more > .btn {
-  border: 0.25rem solid rgb(0, 173, 181);
-  color: rgb(0, 173, 181);
-  background-color: rgba(30, 36, 45, 0.2);
-  box-shadow: inset 0 0 0 0 rgb(0, 173, 181);
+  border: 0.25rem solid var(--primarycolor);
+  color: var(--primarycolor);
+  background-color: transparent;
+  box-shadow: inset 0 0 var(--primarycolor);
   width: 15rem;
-  transition: 0.2s ease-out;
+  transition: 0.2s ease-in;
 
   /* rgb(0, 173, 181) */
   /* rgba(0, 173, 181, 0.8) */
@@ -172,23 +181,22 @@ img.logo {
 }
 
 .more > .btn:hover {
-  box-shadow: inset 15rem 0 0 0 rgb(0, 173, 181),
-    0 0 0.5rem 0px rgba(238, 238, 238, 0.8);
-  color: rgb(238, 238, 238);
-  border: 0.25em solid rgba(238, 238, 238, 0.8);
+  box-shadow: inset 15rem 0 var(--primarycolor), 0 0 1rem 0 var(--text-opacity);
+  color: var(--text-color);
+  border: 0.25em solid var(--text-opacity);
 }
 
 .name {
   /* text-transform: uppercase; */
   font-weight: 800;
-  color: rgb(0, 173, 181);
+  color: var(--primarycolor);
 }
 
 .hero-title {
+  font-size: 1.5rem;
   text-align: center;
   position: relative;
-  flex-shrink: 2;
-  flex-wrap: nowrap;
+
   font-family: "Syne Mono", monospace;
   /* opacity: 0; */
 }
@@ -205,42 +213,59 @@ img.logo {
 }
 
 .hero-title::before {
-  background: rgb(34, 40, 49);
-  animation: typewriter 1.5s steps(25) 0.2s forwards;
+  background: var(--bgcolor);
+  animation: typewriter 1s steps(20) 0.2s forwards;
 }
 
 .hero-title::after {
   width: 0.125rem;
-  background: rgb(238, 238, 238);
-  visibility: visible;
+  background: var(--text-color);
+
   z-index: 1000;
-  animation: typewriter 1.5s steps(25) 0.2s forwards,
+  animation: typewriter 1s steps(20) 0.2s forwards,
     blinkingcursor 500ms infinite forwards;
 }
 
 .hero-text {
+  font-size: small;
   padding: 0;
   margin: 0% !important;
   border: 0;
   opacity: 0;
-  transform: translateY(2rem);
 }
 
 .hero-text.text-1 {
-  animation: fadeInUp 0.5s ease-in 2.2s forwards;
+  transform: translateY(2rem);
+  animation: fadeInUp 0.7s ease-in 1.9s forwards;
 }
 .hero-text.text-2 {
-  animation: fadeInUp 1s ease-in 3.5s forwards;
+  transform: translateY(1rem);
+  animation: fadeInUp 1s ease-out 3.5s forwards;
 }
 
 .more {
   opacity: 0;
-  /* transform: translatey(1rem); */
-  animation: fadeInUp 1s ease-in 5s forwards;
+  animation: fadein 1s ease-in 5s forwards;
 }
 
 /* todo adjust colors based on scheme */
 @media (prefers-color-scheme: light) {
+  :root,
+  body.dark {
+    --bgcolor: rgb(238, 238, 238);
+    --text-color: rgb(34, 40, 49);
+    --text-opacity: rgba(30, 36, 45, 0.8);
+    --bghighlight: rgba(238, 238, 238, 0.8);
+    --bghover: rgb(200, 200, 200, 0.5);
+    --primarycolor: rgb(0, 173, 181);
+    --primaryhighlight: rgba(0, 173, 181, 0.8);
+  }
+}
+
+@keyframes fadein {
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
@@ -256,12 +281,12 @@ img.logo {
   }
 }
 @keyframes blinkingcursor {
-  0%,
-  50% {
+  10%,
+  40% {
     background: transparent;
   }
-  51%,
-  100% {
+  60%,
+  90% {
     background: rgb(238, 238, 238);
   }
 }

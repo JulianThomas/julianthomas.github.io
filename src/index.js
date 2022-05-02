@@ -5,6 +5,7 @@ const canvas = document.querySelector("canvas"),
     "rgb(81, 162, 233)",
     "rgb(81, 162, 233)",
     "rgb(81, 162, 233)",
+
     "rgb(255, 77, 90)",
   ], // 80% of dots are blue. 20% pink
   color = "rgb(81, 162, 233)";
@@ -202,13 +203,13 @@ window.onload = canvasDots;
 window.onresize = function () {
   clearInterval(draw);
   canvasDots();
-  // console.log(yippe);
 };
 
 const homeSection = document.querySelectorAll(".page-section");
+var yMargin = window.innerHeight / 3;
 const sectionOptions = {
-  rootMargin: "-40px 0px 0px 0px",
-  threshold: 0.1,
+  rootMargin: "-" + yMargin + "px 0px -" + yMargin + "px 0px",
+  // threshold: 0.1,
 };
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
