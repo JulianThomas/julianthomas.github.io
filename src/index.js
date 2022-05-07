@@ -14,7 +14,7 @@ let mousePosition = {
   y: (30 * canvas.height) / 100,
 };
 
-const windowSize = window.innerWidth;
+let windowSize = window.innerWidth;
 let dots, draw;
 
 const canvasDots = function () {
@@ -58,7 +58,7 @@ const canvasDots = function () {
   } else if (windowSize > 600) {
     dots = {
       nb: 300,
-      distance: 40,
+      distance: 0,
       d_radius: 100,
       array: [],
     };
@@ -202,6 +202,7 @@ window.onmousemove = function (parameter) {
 window.onload = canvasDots;
 window.onresize = function () {
   clearInterval(draw);
+  windowSize = window.innerWidth;
   canvasDots();
 };
 
